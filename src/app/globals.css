@@ -195,6 +195,7 @@ button {
   content: "";
   position: absolute;
   inset: -30%;
+  pointer-events: none;
   background: linear-gradient(
     120deg,
     transparent 0%,

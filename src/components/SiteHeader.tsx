@@ -8,7 +8,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4">
+    <header className="sticky top-0 z-50 px-4">
       <div className="glass-panel mx-auto flex max-w-6xl items-center justify-between rounded-full px-5 py-3">
         <Link
           href="/"
