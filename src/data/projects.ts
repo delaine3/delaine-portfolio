@@ -7,12 +7,14 @@ export type Project = {
   tech: string[];
   liveUrl?: string;
   githubUrl?: string;
+  liveAppLink?: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "mvula-axis",
     title: "Mvula Axis",
+    liveAppLink: "",
     summary:
       "A full-stack business management system for tracking operational records, payments, orders, and searchable business data.",
     problem:
@@ -29,6 +31,7 @@ export const projects: Project[] = [
   {
     slug: "noticing",
     title: "Noticing",
+    liveAppLink: "https://noticing-six.vercel.app/",
     summary:
       "A personal tracking app for observing patterns across mood, energy, food, hydration, movement, sunlight, and daily routines.",
     problem:
@@ -51,6 +54,7 @@ export const projects: Project[] = [
   {
     slug: "avolog",
     title: "Avolog",
+    liveAppLink: "https://avocado-app-mu.vercel.app/",
     summary:
       "An avocado plant care tracker for growth logs, care history, plant profiles, and photo-based progress tracking.",
     problem:
