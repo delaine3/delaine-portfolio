@@ -18,7 +18,7 @@ export function SiteFooter() {
           <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
             LinkedIn
           </a>
-          <a href="mailto:greenmavis402@gmail.com">Email</a>
+          <a href="mailto:delaineabner3@gmail.com">Email</a>
         </div>
       </div>
     </footer>

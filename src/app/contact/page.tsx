@@ -6,7 +6,7 @@ export default function ContactPage() {
       <SectionHeading
         eyebrow="Contact"
         title="Let’s work together"
-        description="I’m open to web developer and full-stack developer roles, especially work involving React, TypeScript, Java, Spring Boot, PostgreSQL, and practical product implementation."
+        description="I’m open to backend and full-stack developer roles, especially work involving React, TypeScript, Java, Spring Boot, PostgreSQL,SQL, MySQL and practical product implementation."
       />
 
       <div className="mt-8 rounded-3xl border border-[var(--border)] bg-white/78 p-6 shadow-sm">
