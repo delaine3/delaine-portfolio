@@ -7,17 +7,17 @@ const services = [
   {
     number: "01",
     name: "Next.js & React",
-    description: "Frontend features, data-heavy interfaces, forms, dashboards and the bugs in between.",
+    description: "Frontend features, forms, dashboards, and debugging existing applications.",
   },
   {
     number: "02",
     name: "Supabase & PostgreSQL",
-    description: "Authentication, database-backed workflows, search, filters and paginated views.",
+    description: "Authentication, data workflows, search, filtering, and pagination.",
   },
   {
     number: "03",
     name: "APIs & integrations",
-    description: "REST endpoints, application logic, Java services and connecting the pieces.",
+    description: "REST endpoints, application logic, Java services, and connecting existing systems.",
   },
 ];
 
@@ -26,100 +26,108 @@ export default function Home() {
     <div className="site-shell">
       <section className="home-hero" aria-labelledby="intro-heading">
         <div>
-          <p className="eyebrow">Delaine · Full-stack developer · Based in Eswatini</p>
-          <h1 id="intro-heading" className="hero-title mt-6">
-            From messy workflows to <em>working software.</em>
+          <p className="eyebrow">Delaine · Full-stack developer · Eswatini</p>
+          <h1 id="intro-heading" className="hero-title mt-7">
+            I build web apps, APIs, and <em>data-driven features.</em>
           </h1>
-          <p className="hero-intro mt-7">
-            I'm Delaine. I've spent three years building and maintaining web
-            applications. I work with Next.js, React, TypeScript, Supabase,
-            PostgreSQL and Java, from database queries to the last UI detail.
+          <p className="hero-intro mt-8">
+            Three years of professional web development experience. I work across
+            Next.js, React, TypeScript, Supabase, PostgreSQL, and Java, from
+            database queries to the interface people use.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-            <Link className="button button-primary" href="/projects">Explore my projects</Link>
+          <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <Link className="button button-primary" href="/projects">
+              Explore my work
+            </Link>
             <a className="text-link text-sm" href="mailto:delaineabner3@gmail.com?subject=Development%20project">
-              Email me ↗
+              Get in touch ↗
             </a>
           </div>
-          <p className="hero-meta mt-11">
-            Available for remote, paid contract projects · Source code linked below
+          <p className="hero-meta mt-12">
+            Available for paid, remote contract projects
           </p>
         </div>
-        <aside className="feature-panel" aria-label="Featured project AvoLog">
-          <div className="flex items-center justify-between gap-4">
-            <span className="eyebrow">Project in focus</span>
-            <span className="tiny-label">01 / 03</span>
+
+        <aside className="hero-graphic p-7 sm:p-9" aria-label="Featured project AvoLog">
+          <div className="graphic-top flex items-center justify-between gap-3">
+            <p className="eyebrow" style={{ color: "var(--skin-deep)" }}>Featured project</p>
+            <span className="tiny-label" style={{ color: "var(--skin-deep)" }}>01 / 03</span>
           </div>
-          <div className="feature-rule mt-9" aria-hidden="true" />
-          <h2 className="feature-title mt-5">AvoLog</h2>
-          <p className="mt-5 text-base leading-8">
-            I grow avocado trees. So I built a way to track each plant,
-            its care history and its progress, without juggling notes and photos.
-          </p>
-          <ul className="feature-list mt-8 text-sm font-semibold leading-6">
-            <li>Next.js + Supabase</li>
-            <li>Care logs + image uploads</li>
-            <li>Filtering + pagination</li>
-          </ul>
-          <Link className="text-link mt-9 inline-block text-sm" href="/projects/avolog">
-            See the engineering decisions ↗
-          </Link>
+          <div className="avocado-art" role="img" aria-label="Illustration of a cut avocado">
+            <div className="avocado-outer">
+              <div className="avocado-flesh" />
+              <div className="avocado-pit" />
+            </div>
+          </div>
+          <div className="graphic-footer">
+            <h2>AvoLog</h2>
+            <p className="mt-3 max-w-sm text-sm leading-7">
+              A plant tracker I built to log avocado growth, care history, and photos.
+            </p>
+            <Link href="/projects/avolog"
+                  className="mt-5 inline-block text-sm font-bold underline underline-offset-4">
+              Explore the project ↗
+            </Link>
+          </div>
         </aside>
       </section>
 
-      <section className="section-rule pt-12 pb-16" aria-labelledby="services-title">
+      <section className="section-rule pb-20 pt-14">
         <SectionHeading
-          eyebrow="What I work on"
-          title="Small problems deserve good engineering."
-          description="These are the kinds of tasks I can take from a defined scope to a working handoff."
+          eyebrow="What I do"
+          title="Development work I can take off your plate."
+          description="Defined tasks, working code, and a handoff that doesn't create more work for your team."
         />
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
+        <div className="mt-11 grid gap-8 md:grid-cols-3">
           {services.map((service) => (
             <article className="service-item" key={service.number}>
-              <p className="eyebrow">{service.number}</p>
-              <h3 className="mt-3 text-2xl font-bold">{service.name}</h3>
-              <p className="mt-3 leading-7">{service.description}</p>
+              <span className="eyebrow">{service.number}</span>
+              <h3 className="mt-4 text-2xl font-bold">{service.name}</h3>
+              <p className="mt-4 leading-7">{service.description}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section-rule pt-12 pb-16" aria-labelledby="selected-work-title">
+      <section className="section-rule pb-20 pt-14">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
             eyebrow="Selected work"
-            title="Projects with code behind them."
-            description="Three independent builds. I explain what I implemented, what I traded off and what I'd improve."
+            title="Projects you can actually inspect."
+            description="Personal applications and an API prototype, with code, implementation notes, and tradeoffs."
           />
-          <Link className="text-link text-sm" href="/projects">All project details ↗</Link>
+          <Link className="text-link text-sm" href="/projects">See all projects ↗</Link>
         </div>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
 
-      <section className="section-rule grid gap-8 py-12 md:grid-cols-2">
-        <div>
+      <section className="section-rule grid gap-8 py-14 md:grid-cols-2">
+        <div className="pr-3">
           <p className="eyebrow">Professional experience</p>
-          <h2 className="mt-4 text-3xl font-bold leading-tight">Three years in a development team.</h2>
-          <p className="mt-4 max-w-lg leading-8">
-            At AcisTek LLC (2023–2026), I worked on web development, backend
-            migration, debugging, code reviews and AWS CI/CD support.
+          <h2 className="mt-5 max-w-md text-3xl font-bold leading-tight sm:text-4xl">
+            Three years inside a development team.
+          </h2>
+          <p className="mt-5 max-w-lg leading-8">
+            At AcisTek LLC (2023–2026), I worked on web applications, backend
+            migration, debugging, code reviews, and AWS CI/CD support.
           </p>
         </div>
-        <div className="work-cta p-8">
-          <p className="eyebrow">Let's work</p>
-          <h2 className="mt-4 text-3xl font-bold leading-tight">
-            Got a feature to finish or a bug to track down?
+        <div className="work-cta p-8 sm:p-10">
+          <p className="eyebrow">Work with me</p>
+          <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl">
+            Need a feature finished or a bug fixed?
           </h2>
-          <p className="mt-4 leading-7">
-            Send me the problem and the stack. I can propose a small, paid,
-            fixed-scope project.
+          <p className="mt-5 leading-8">
+            Send the scope and the stack. I'll propose a small, paid project
+            with defined deliverables.
           </p>
-          <a className="button button-primary mt-7" href="mailto:delaineabner3@gmail.com?subject=Small%20development%20project">
-            Discuss a project
+          <a className="button button-primary mt-7"
+             href="mailto:delaineabner3@gmail.com?subject=Small%20development%20project">
+            Discuss a project ↗
           </a>
         </div>
       </section>
