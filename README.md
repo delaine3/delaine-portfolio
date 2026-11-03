@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Delaine — developer portfolio
 
-## Getting Started
+Personal portfolio built with Next.js 16, React 19, TypeScript and Tailwind CSS 4.
 
-First, run the development server:
+## Purpose
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Present my work to potential contract clients, particularly teams working with Next.js, TypeScript, Supabase and APIs. The portfolio includes links to the actual project repositories and notes about engineering decisions and tradeoffs.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Projects
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **AvoLog:** plant profiles, Supabase-backed care logs, photo uploads, filtering and pagination.
+- **Noticing:** activity logs and insights built with Next.js and Supabase.
+- **Mvula Axis:** a Java / Spring Boot order-management API prototype.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+Run `npm ci`, then `npm run dev`. For checks run `npm run lint` and `npm run build`.
 
-To learn more about Next.js, take a look at the following resources:
+## Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The site uses only colours sampled from an avocado photograph supplied for the redesign. All named colours are in `src/app/globals.css`. The palette includes flesh cream (`#f5f3c2`), background green (`#ccda83`), skin olive (`#495813`) and seed brown (`#321006`). No external component library or decorative animation is required.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scope
 
-## Deploy on Vercel
+The site is a static marketing portfolio. It does not contain a backend, contact form or analytics service. The contact links use `mailto:`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Links
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Project source](https://github.com/delaine3/delaine-portfolio)
+- [GitHub profile](https://github.com/delaine3)

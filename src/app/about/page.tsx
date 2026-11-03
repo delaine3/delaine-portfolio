@@ -1,27 +1,33 @@
-import { SectionHeading } from "@/src/components/SectionHeading";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-4xl px-5 py-16">
-      <SectionHeading
-        eyebrow="About"
-        title="Developer focused on useful software, thoughtful interfaces, and durable systems"
-        description="I build web applications with React, Next.js, TypeScript, Java, Spring Boot, PostgreSQL, and Supabase. My work focuses on practical systems: searchable records, dashboards, structured workflows, authentication, deployment, and maintainable code."
-      />
-
-      <div className="mt-8 space-y-5 leading-8 text-[var(--muted)]">
+    <div className="site-shell max-w-4xl py-14">
+      <p className="eyebrow">About me</p>
+      <h1 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">
+        I like software with a real job to do.
+      </h1>
+      <div className="surface mt-9 space-y-5 p-7 text-lg leading-8 sm:p-10">
         <p>
-          My background includes professional web development work, backend
-          migration, AWS CI/CD support, debugging, code reviews, and building
-          full-stack portfolio projects from the database layer through the user
-          interface.
+          I'm Delaine, a full-stack developer based in Eswatini. I spent three years
+          working on web applications at AcisTek LLC, and I build personal projects
+          in Next.js, React, TypeScript, Supabase and Java.
         </p>
-
         <p>
-          I care about software that has a reason to exist. I like turning messy
-          real-world workflows into structured interfaces that people can
-          actually use.
+          AvoLog started because I actually grow avocado trees. I wanted a better way
+          to track individual plants, photos and care history. That is the kind of
+          problem I enjoy: something concrete, with a workflow to untangle.
         </p>
+        <p>
+          I enjoy the less glamorous parts of development too: data models, debugging,
+          API behavior, pagination and making existing features more dependable.
+        </p>
+      </div>
+      <div className="mt-8 flex flex-wrap gap-3">
+        <Link className="button button-primary" href="/projects">See projects</Link>
+        <a className="button button-secondary" href="mailto:delaineabner3@gmail.com">
+          Get in touch
+        </a>
       </div>
     </div>
   );

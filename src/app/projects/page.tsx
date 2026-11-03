@@ -4,14 +4,13 @@ import { projects } from "@/src/data/projects";
 
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-5 py-16">
+    <div className="site-shell py-14">
       <SectionHeading
         eyebrow="Projects"
-        title="Selected full-stack and product-focused work"
-        description="These projects show how I approach data models, user workflows, backend systems, frontend structure and deployment."
+        title="Things I've built, and how they work."
+        description="These are personal projects and an API prototype, not client commissions. The source code is available for inspection."
       />
-
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <div className="mt-9 grid gap-5 md:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
