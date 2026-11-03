@@ -8,22 +8,15 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 px-4">
-      <div className="flex max-w-6xl items-center justify-between px-5 py-3">
-        <Link
-          href="/"
-          className="text-sm font-black tracking-[0.22em] text-[var(--deep-teal)] uppercase"
-        >
+    <header className="site-header">
+      <div className="site-shell flex flex-wrap items-center justify-between gap-4 py-5">
+        <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-tight" aria-label="Delaine, home">
+          <span className="brand-mark" aria-hidden="true" />
           Delaine
         </Link>
-
-        <nav className="flex items-center gap-4 text-sm text-[var(--muted)] md:gap-6">
+        <nav aria-label="Main navigation" className="flex items-center gap-5 text-sm font-semibold sm:gap-8">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="transition hover:text-[var(--deep-teal)]"
-            >
+            <Link key={item.href} href={item.href} className="nav-link pb-1">
               {item.label}
             </Link>
           ))}

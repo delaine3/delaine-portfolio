@@ -1,235 +1,123 @@
 import Link from "next/link";
-import { TechBadge } from "../components/TechBadge";
-import { SectionHeading } from "../components/SectionHeading";
-import { ProjectCard } from "../components/ProjectCard";
-import { projects } from "../data/projects";
+import { ProjectCard } from "@/src/components/ProjectCard";
+import { SectionHeading } from "@/src/components/SectionHeading";
+import { TechBadge } from "@/src/components/TechBadge";
+import { projects } from "@/src/data/projects";
 
-const proofItems = [
+const work = [
   {
-    label: "Backend",
-    value: "Java · Spring Boot · REST APIs",
+    title: "Next.js features",
+    detail: "React interfaces, forms, dashboards, debugging and bringing unfinished features across the line.",
   },
   {
-    label: "Data",
-    value: "PostgreSQL · Supabase · Search",
+    title: "Database-backed workflows",
+    detail: "Supabase and PostgreSQL integrations, record management, search, filters and pagination.",
   },
   {
-    label: "Systems",
-    value: "CRUD · Pagination · Filtering",
+    title: "APIs and application logic",
+    detail: "REST endpoints, validation, data models and Java / Spring Boot services.",
   },
-  {
-    label: "Interface",
-    value: "React · Next.js · TypeScript",
-  },
-];
-
-const skills = [
-  "Java",
-  "Spring Boot",
-  "PostgreSQL",
-  "REST APIs",
-  "JPA",
-  "Supabase",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Tailwind CSS",
-  "React Query",
-  "TanStack Table",
-  "Vercel",
-  "AWS CI/CD",
 ];
 
 export default function Home() {
   return (
-    <div className="px-4 pb-8 pt-6">
-      <section className="section-shell glass-panel-strong wave-sheen mx-auto max-w-6xl overflow-hidden rounded-[2.25rem] px-6 py-14 md:px-10 md:py-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(132,231,214,0.18),transparent_26%),radial-gradient(circle_at_78%_20%,rgba(112,190,211,0.16),transparent_24%),radial-gradient(circle_at_58%_78%,rgba(134,225,202,0.12),transparent_24%)]" />
-
-        <div className="pointer-events-none ring-pattern left-[-3rem] top-[-3rem] h-[18rem] w-[18rem]" />
-        <div className="pointer-events-none ring-pattern right-[-4rem] top-[2rem] h-[20rem] w-[20rem]" />
-        <div className="pointer-events-none ring-pattern bottom-[-7rem] left-[35%] h-[18rem] w-[18rem]" />
-
-        <div className="relative z-10">
-          <p className="mb-5 text-sm font-bold tracking-[0.22em] text-[var(--teal)] uppercase">
-            Backend-Leaning Full-Stack Developer
-          </p>
-
-          <h1 className="max-w-5xl text-4xl font-black leading-[1.02] tracking-tight md:text-6xl">
-            I build practical web applications with{" "}
-            <span className="text-gradient-water">
-              reliable backend systems.
-            </span>
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-            I’m Delaine, a developer working with Java, Spring Boot, PostgreSQL,
-            Supabase, React, Next.js, and TypeScript. I’m most drawn to the
-            backend and systems side of software: data models, API and workflows
-          </p>
-
-          <div className="relative z-20 mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/projects"
-              className="liquid-button liquid-button-primary"
-            >
-              View projects
-            </Link>
-
-            <a
-              href="mailto:delaineabner3@gmail.com"
-              className="liquid-button liquid-button-secondary"
-            >
-              Contact me
-            </a>
+    <div className="site-shell pt-8">
+      <section className="hero">
+        <div className="grid lg:grid-cols-[1.6fr_1fr]">
+          <div className="px-6 py-12 sm:px-10 sm:py-16">
+            <p className="eyebrow">Delaine · Full-stack developer · Eswatini</p>
+            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+              I build web apps, APIs, and the fiddly parts between them.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8">
+              Three years of professional web development experience, plus hands-on projects
+              using Next.js, React, TypeScript, Supabase and Java. I like turning messy
+              data and workflows into applications that people can actually use.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link className="button button-primary" href="/projects">
+                See my work
+              </Link>
+              <a className="button button-secondary" href="mailto:delaineabner3@gmail.com?subject=Development%20project">
+                Discuss a project
+              </a>
+            </div>
+            <div className="mt-9 flex flex-wrap gap-2">
+              {["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Java"].map((tech) => (
+                <TechBadge key={tech}>{tech}</TechBadge>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-2">
-            {[
-              "Java",
-              "Spring Boot",
-              "PostgreSQL",
-              "MySQL",
-              "SQL",
-              "REST APIs",
-              "TypeScript",
-              "React",
-            ].map((skill) => (
-              <TechBadge key={skill}>{skill}</TechBadge>
-            ))}
-          </div>
+          <aside className="hero-aside flex flex-col justify-between p-7 sm:p-10">
+            <div>
+              <p className="eyebrow eyebrow-light">What I can take on</p>
+              <h2 className="mt-5 text-3xl font-extrabold leading-tight">
+                One defined task. Working code. A clean handoff.
+              </h2>
+              <ul className="mt-8 space-y-5 text-base leading-7">
+                <li className="border-t border-[var(--skin)] pt-4">A frontend feature or dashboard</li>
+                <li className="border-t border-[var(--skin)] pt-4">A Supabase integration or data workflow</li>
+                <li className="border-t border-[var(--skin)] pt-4">A bug fix or API implementation</li>
+              </ul>
+            </div>
+            <p className="mt-10 text-sm leading-6">
+              Available for remote, paid, fixed-scope contract work.
+            </p>
+          </aside>
         </div>
       </section>
 
-      <section className="mx-auto mt-6 max-w-6xl">
-        <div className="glass-panel grid gap-4 rounded-[2rem] p-5 md:grid-cols-3 md:p-6">
-          <div className="rounded-[1.35rem] border border-[var(--line)] bg-white/42 p-4">
-            <p className="text-xs font-bold tracking-[0.18em] text-[var(--teal)] uppercase">
-              Backend focus
-            </p>
-            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-              APIs, database-backed features, structured records, and business
-              workflows.
-            </p>
-          </div>
-
-          <div className="rounded-[1.35rem] border border-[var(--line)] bg-white/42 p-4">
-            <p className="text-xs font-bold tracking-[0.18em] text-[var(--teal)] uppercase">
-              Practical product work
-            </p>
-            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-              Tools built around real use: tracking, searching, filtering,
-              logging, and managing records.
-            </p>
-          </div>
-
-          <div className="rounded-[1.35rem] border border-[var(--line)] bg-white/42 p-4">
-            <p className="text-xs font-bold tracking-[0.18em] text-[var(--teal)] uppercase">
-              Thoughtful implementation
-            </p>
-            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-              Case studies walk through the problem, the data, the decisions,
-              and possible next steps.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto mt-8 grid max-w-6xl gap-4 md:grid-cols-4">
-        {proofItems.map((item) => (
-          <div key={item.label} className="glass-panel rounded-[1.5rem] p-5">
-            <p className="text-xs font-bold tracking-[0.18em] text-[var(--teal)] uppercase">
-              {item.label}
-            </p>
-            <p className="mt-2 text-sm font-semibold leading-6 text-[var(--foreground)]">
-              {item.value}
-            </p>
-          </div>
-        ))}
-      </section>
-
-      <section className="mx-auto mt-16 max-w-6xl">
+      <section className="mt-20">
         <SectionHeading
-          eyebrow="Featured work"
-          title="Projects that show the system behind the screen"
-          description="Each case study covers the workflow, the data model, the backend decisions, and the interface built around them."
+          eyebrow="Services"
+          title="Useful development work, without the ceremony."
+          description="These are the types of tasks I can scope, build, test and hand over."
         />
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
+          {work.map((item, index) => (
+            <article className={index === 1 ? "surface-soft p-6" : "surface p-6"} key={item.title}>
+              <h3 className="text-xl font-bold">{item.title}</h3>
+              <p className="mt-3 leading-7">{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <section className="mt-20">
+        <SectionHeading
+          eyebrow="Selected projects"
+          title="Code you can inspect."
+          description="Personal applications and an API prototype. Each case study explains what works, how I built it and what I would improve."
+        />
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
 
-      <section className="mx-auto mt-20 max-w-6xl">
-        <div className="grid gap-6 md:grid-cols-[0.95fr_1.05fr]">
-          <div className="glass-panel rounded-[2rem] p-6 md:p-8">
-            <SectionHeading
-              eyebrow="How I work"
-              title="I like software that feels understandable from end to end."
-              description="I care about how the database, API, application logic, and interface fit together. When those pieces support the same workflow, the product becomes easier to use and easier to maintain."
-            />
-          </div>
-
-          <div className="glass-panel rounded-[2rem] p-6 md:p-8">
-            <p className="text-sm font-bold tracking-[0.22em] text-[var(--teal)] uppercase">
-              Engineering range
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black tracking-tight text-[var(--foreground)] md:text-4xl">
-              Strongest in backend-heavy work, with enough frontend range to
-              build complete applications.
-            </h2>
-
-            <p className="mt-4 text-base leading-8 text-[var(--muted)]">
-              My work centers on APIs, data models, search, filtering,
-              pagination, debugging, and workflows that need structure. I also
-              build the interface when it helps the system become usable and
-              complete.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <TechBadge key={skill}>{skill}</TechBadge>
-              ))}
-            </div>
-          </div>
+      <section className="mt-20 grid gap-5 lg:grid-cols-[1fr_1.2fr]">
+        <div className="surface-soft p-7 sm:p-9">
+          <p className="eyebrow">Professional experience</p>
+          <h2 className="mt-4 text-3xl font-black">Three years in a development team.</h2>
+          <p className="mt-5 leading-8">
+            I worked as a junior full-stack developer at AcisTek LLC from 2023 to 2026.
+            My experience includes application development, debugging, backend migration,
+            code reviews and AWS CI/CD support.
+          </p>
         </div>
-      </section>
-
-      <section className="mx-auto mt-20 max-w-6xl">
-        <div className="glass-panel-strong rounded-[2.2rem] px-6 py-10 md:px-10 md:py-12">
-          <p className="text-sm font-bold tracking-[0.22em] text-[var(--teal)] uppercase">
-            Role fit
+        <div className="surface p-7 sm:p-9">
+          <p className="eyebrow">Working together</p>
+          <h2 className="mt-4 text-3xl font-black">Start with a small, real problem.</h2>
+          <p className="mt-5 leading-8">
+            If you have a feature that needs finishing, a database workflow that needs
+            attention or a bug that keeps getting postponed, email me the scope.
+            I can propose a bounded, paid implementation.
           </p>
-
-          <h2 className="mt-4 max-w-3xl text-3xl font-black tracking-tight md:text-5xl">
-            Looking for backend or full-stack work where I can build useful
-            systems end to end.
-          </h2>
-
-          <p className="mt-4 max-w-2xl text-base leading-8 text-[var(--muted)] md:text-lg">
-            The strongest fit is a role involving Java, Spring Boot, PostgreSQL,
-            REST APIs, backend integration, debugging, and practical product
-            work.
-          </p>
-
-          <div className="relative z-20 mt-8 flex flex-wrap gap-3">
-            <a
-              href="mailto:delaineabner3@gmail.com"
-              className="liquid-button liquid-button-primary"
-            >
-              Email me
-            </a>
-
-            <Link
-              href="/projects"
-              className="liquid-button liquid-button-secondary"
-            >
-              See the work
-            </Link>
-          </div>
+          <a className="button button-primary mt-6" href="mailto:delaineabner3@gmail.com?subject=Small%20development%20project">
+            Tell me what needs fixing
+          </a>
         </div>
       </section>
     </div>

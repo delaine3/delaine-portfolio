@@ -1,76 +1,90 @@
 export type Project = {
   slug: string;
   title: string;
+  kind: string;
   summary: string;
   problem: string;
   highlights: string[];
+  decisions: string[];
+  nextStep: string;
   tech: string[];
   liveUrl?: string;
-  githubUrl?: string;
-  liveAppLink?: string;
+  githubUrl: string;
 };
 
 export const projects: Project[] = [
   {
-    slug: "mvula-axis",
-    title: "Mvula Axis",
-    liveAppLink: "",
+    slug: "avolog",
+    title: "AvoLog",
+    kind: "Next.js / Supabase / TypeScript",
     summary:
-      "A full-stack business management system for tracking operational records, payments, orders, and searchable business data.",
+      "An avocado plant tracker with individual plant records, care timelines, photos, filtering and pagination.",
     problem:
-      "Small business operations often spread important records across notebooks, chats, spreadsheets, and memory. Mvula Axis brings that information into structured, searchable workflows.",
+      "I grow avocado trees. Keeping track of individual plants, their condition, and each care event became cumbersome without a searchable history.",
     highlights: [
-      "Built REST API patterns with Java, Spring Boot, JPA, and PostgreSQL.",
-      "Implemented pagination, sorting, filtering, and search using backend specifications.",
-      "Designed reusable React and TypeScript table flows for business records.",
-      "Structured DTOs and entities to keep API boundaries maintainable.",
+      "Built authenticated plant profiles and care-log workflows with Next.js and Supabase.",
+      "Added filters for health, status and growing medium alongside sorting and server-side pagination.",
+      "Stored care photos in Supabase Storage and surfaced recent photos with plant records.",
+      "Added an image compression step before upload and a bulk care-log action.",
     ],
-    tech: ["React", "TypeScript", "Java", "Spring Boot", "PostgreSQL", "JPA"],
-    githubUrl: "https://github.com/delaine3/mvula-axis-backend",
+    decisions: [
+      "The plant list uses a count query and an inclusive Supabase range, so pagination operates on a subset rather than the entire plants table.",
+      "Filters are encoded in URL parameters; page links carry existing filter values forward.",
+      "The current dashboard also fetches care logs to identify each plant's most recent activity. For larger datasets, I would move that aggregation closer to the database.",
+    ],
+    nextStep:
+      "Reduce care-log fetching on the dashboard and add focused automated tests for filtering and pagination.",
+    tech: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Supabase Storage"],
+    liveUrl: "https://avocado-app-mu.vercel.app/",
+    githubUrl: "https://github.com/delaine3/avocado-app",
   },
   {
     slug: "noticing",
     title: "Noticing",
-    liveAppLink: "https://noticing-six.vercel.app/",
+    kind: "Next.js / Data workflows",
     summary:
-      "A personal tracking app for observing patterns across mood, energy, food, hydration, movement, sunlight, and daily routines.",
+      "A personal log for tracking everyday activities and reviewing changes in energy, mood, food, hydration and movement.",
     problem:
-      "Most habit apps reward streaks. Noticing focuses on evidence: what makes life hurt less, what improves energy, and what patterns are worth paying attention to.",
+      "I wanted to record observations over time without turning everyday activities into a streak or score-chasing exercise.",
     highlights: [
-      "Built with Next.js, Supabase, TypeScript, and Vercel deployment.",
-      "Designed flexible logging flows for daily actions and body-state tracking.",
-      "Created dashboard concepts for insights, trend analysis, and daily evidence.",
-      "Used product thinking to turn personal observation into structured data.",
+      "Built authenticated activity logs with Supabase and server-side page loading.",
+      "Created forms for different kinds of records, including meals, water and movement.",
+      "Organized log history by date and created a separate insights dashboard.",
+      "Deployed the application with Next.js and Vercel.",
     ],
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Supabase",
-      "PostgreSQL",
-      "Tailwind CSS",
-      "Vercel",
+    decisions: [
+      "Log history is paginated in sets of 20 and ordered by activity date, time and creation timestamp.",
+      "The insights page currently retrieves the user's records to render summaries and trends.",
+      "Keeping logging and insights as separate workflows makes it easier to add new record types.",
     ],
+    nextStep:
+      "Move heavier trend calculations into database queries as the amount of history grows.",
+    tech: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Vercel"],
+    liveUrl: "https://noticing-six.vercel.app/",
+    githubUrl: "https://github.com/delaine3/noticing",
   },
   {
-    slug: "avolog",
-    title: "Avolog",
-    liveAppLink: "https://avocado-app-mu.vercel.app/",
+    slug: "mvula-axis",
+    title: "Mvula Axis",
+    kind: "Java / Spring Boot / PostgreSQL",
     summary:
-      "An avocado plant care tracker for growth logs, care history, plant profiles, and photo-based progress tracking.",
+      "An order-management API prototype with itemized totals, search, sorting, pagination and typed response objects.",
     problem:
-      "Plant care becomes easier when observations, watering, root growth, leaf growth, and photos live in one timeline instead of scattered notes.",
+      "Order information becomes difficult to maintain when line items, amounts and searchable fields are scattered across different records.",
     highlights: [
-      "Built plant profiles and care logs using Next.js and Supabase.",
-      "Implemented image upload and display with Supabase Storage.",
-      "Designed friendly UI patterns for daily care tracking.",
-      "Modeled care events like water changes, root growth, leaf growth, and seed cracks.",
+      "Built REST endpoints and service-layer logic for orders and order items.",
+      "Calculated order totals from line items using BigDecimal.",
+      "Implemented search across vendor, description and status with JPA Specifications.",
+      "Returned paginated API responses with item counts and page metadata.",
     ],
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Supabase",
-      "Supabase Storage",
-      "Tailwind CSS",
+    decisions: [
+      "DTOs separate the API response shape from the persistence entities.",
+      "JPA Specifications keep text-search criteria reusable across paginated requests.",
+      "The service recalculates order totals after line items change instead of trusting a client-supplied total.",
     ],
+    nextStep:
+      "Add stronger request validation, constrain sortable fields and expand the test suite before production use.",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "JPA", "REST APIs"],
+    githubUrl: "https://github.com/delaine3/mvula-axis-backend",
   },
 ];

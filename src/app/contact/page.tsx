@@ -1,22 +1,25 @@
-import { SectionHeading } from "@/src/components/SectionHeading";
-
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-4xl px-5 py-16">
-      <SectionHeading
-        eyebrow="Contact"
-        title="Let’s work together"
-        description="I’m open to backend and full-stack developer roles, especially work involving React, TypeScript, Java, Spring Boot, PostgreSQL,SQL, MySQL and practical product implementation."
-      />
-
-      <div className="mt-8 rounded-3xl border border-[var(--border)] bg-white/78 p-6 shadow-sm">
-        <p className="text-[var(--muted)]">Email</p>
-        <a
-          href="mailto:delaineabner3@gmail.com"
-          className="mt-2 inline-block text-xl font-bold text-[var(--deep-green)]"
-        >
+    <div className="site-shell max-w-4xl py-14">
+      <p className="eyebrow">Contact</p>
+      <h1 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">
+        Have a technical task that needs finishing?
+      </h1>
+      <p className="mt-6 max-w-2xl text-lg leading-8">
+        I'm available for remote, paid, fixed-scope development projects.
+        Tell me what needs doing, the technology involved and your deadline.
+      </p>
+      <div className="surface mt-9 p-7 sm:p-10">
+        <p className="eyebrow">Email</p>
+        <a className="text-link mt-3 inline-block break-all text-xl font-bold sm:text-2xl"
+           href="mailto:delaineabner3@gmail.com?subject=Development%20project">
           delaineabner3@gmail.com
         </a>
+        <p className="muted mt-6">
+          You can also review my code on{" "}
+          <a className="text-link font-semibold" href="https://github.com/delaine3"
+             target="_blank" rel="noreferrer">GitHub</a>.
+        </p>
       </div>
     </div>
   );
