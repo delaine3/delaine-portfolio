@@ -45,7 +45,7 @@ export const projects: Project[] = [
     summary:
       "A personal log for tracking everyday activities and reviewing changes in energy, mood, food, hydration and movement.",
     problem:
-      "I wanted to record observations over time without turning everyday activities into a streak or score-chasing exercise.",
+      "I wanted a way to record activities and compare how I felt over time, without relying on streaks.",
     highlights: [
       "Built authenticated activity logs with Supabase and server-side page loading.",
       "Created forms for different kinds of records, including meals, water and movement.",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     decisions: [
       "Log history is paginated in sets of 20 and ordered by activity date, time and creation timestamp.",
       "The insights page currently retrieves the user's records to render summaries and trends.",
-      "Keeping logging and insights as separate workflows makes it easier to add new record types.",
+      "Logging and insights live on separate routes, so I can change how records are displayed without rewriting the entry form.",
     ],
     nextStep:
       "Move heavier trend calculations into database queries as the amount of history grows.",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     summary:
       "An order-management API prototype with itemized totals, search, sorting, pagination and typed response objects.",
     problem:
-      "Order information becomes difficult to maintain when line items, amounts and searchable fields are scattered across different records.",
+      "I built this API prototype to work through order and line-item relationships, totals, searching, and pagination in Spring Boot.",
     highlights: [
       "Built REST endpoints and service-layer logic for orders and order items.",
       "Calculated order totals from line items using BigDecimal.",

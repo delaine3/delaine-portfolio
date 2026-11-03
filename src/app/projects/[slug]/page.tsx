@@ -65,14 +65,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       <section className="surface-soft mt-10 p-6 sm:p-8">
-        <h2 className="text-2xl font-black">Engineering decisions and tradeoffs</h2>
+        <h2 className="text-2xl font-black">Technical decisions</h2>
         <ul className="mt-5 list-disc space-y-4 pl-6 leading-8">
           {project.decisions.map((item) => <li key={item}>{item}</li>)}
         </ul>
       </section>
 
       <section className="mt-10">
-        <h2 className="text-2xl font-black">What I would improve next</h2>
+        <h2 className="text-2xl font-black">What I'd work on next</h2>
         <p className="mt-3 leading-8">{project.nextStep}</p>
       </section>
 
