@@ -7,8 +7,8 @@ export default function ProjectsPage() {
     <div className="site-shell py-14">
       <SectionHeading
         eyebrow="Projects"
-        title="Things I've built, and how they work."
-        description="These are personal projects and an API prototype, not client commissions. The source code is available for inspection."
+        title="Personal projects"
+        description="AvoLog, Noticing, and Mvula Axis. Each project has source code and notes on how I built it. None is presented as client work."
       />
       <div className="mt-9 grid gap-5 md:grid-cols-3">
         {projects.map((project) => (

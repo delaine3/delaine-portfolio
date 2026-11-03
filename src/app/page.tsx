@@ -28,7 +28,7 @@ export default function Home() {
         <div>
           <p className="eyebrow">Delaine · Full-stack developer · Eswatini</p>
           <h1 id="intro-heading" className="hero-title mt-7">
-            I build web apps, APIs, and <em>data-driven features.</em>
+            I build web apps, APIs, and <em>database-backed features.</em>
           </h1>
           <p className="hero-intro mt-8">
             Three years of professional web development experience. I work across
@@ -75,8 +75,8 @@ export default function Home() {
       <section className="section-rule pb-20 pt-14">
         <SectionHeading
           eyebrow="What I do"
-          title="Development work I can take off your plate."
-          description="Defined tasks, working code, and a handoff that doesn't create more work for your team."
+          title="What I work on"
+          description="I work on existing applications as well as new features. These are the areas I know best."
         />
         <div className="mt-11 grid gap-8 md:grid-cols-3">
           {services.map((service) => (
@@ -93,8 +93,8 @@ export default function Home() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
             eyebrow="Selected work"
-            title="Projects you can actually inspect."
-            description="Personal applications and an API prototype, with code, implementation notes, and tradeoffs."
+            title="Selected projects"
+            description="Three projects I've built, with source code and notes on the technical decisions."
           />
           <Link className="text-link text-sm" href="/projects">See all projects ↗</Link>
         </div>
@@ -109,7 +109,7 @@ export default function Home() {
         <div className="pr-3">
           <p className="eyebrow">Professional experience</p>
           <h2 className="mt-5 max-w-md text-3xl font-bold leading-tight sm:text-4xl">
-            Three years inside a development team.
+            My experience at AcisTek LLC
           </h2>
           <p className="mt-5 max-w-lg leading-8">
             At AcisTek LLC (2023–2026), I worked on web applications, backend
@@ -119,15 +119,15 @@ export default function Home() {
         <div className="work-cta p-8 sm:p-10">
           <p className="eyebrow">Work with me</p>
           <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl">
-            Need a feature finished or a bug fixed?
+            Have a project to discuss?
           </h2>
           <p className="mt-5 leading-8">
-            Send the scope and the stack. I'll propose a small, paid project
-            with defined deliverables.
+            I'm available for paid, fixed-scope development work. Email me
+            the requirements, the stack, and your deadline.
           </p>
           <a className="button button-primary mt-7"
              href="mailto:delaineabner3@gmail.com?subject=Small%20development%20project">
-            Discuss a project ↗
+            Email me ↗
           </a>
         </div>
       </section>
