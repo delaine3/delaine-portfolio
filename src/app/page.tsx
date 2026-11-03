@@ -1,122 +1,125 @@
 import Link from "next/link";
 import { ProjectCard } from "@/src/components/ProjectCard";
 import { SectionHeading } from "@/src/components/SectionHeading";
-import { TechBadge } from "@/src/components/TechBadge";
 import { projects } from "@/src/data/projects";
 
-const work = [
+const services = [
   {
-    title: "Next.js features",
-    detail: "React interfaces, forms, dashboards, debugging and bringing unfinished features across the line.",
+    number: "01",
+    name: "Next.js & React",
+    description: "Frontend features, data-heavy interfaces, forms, dashboards and the bugs in between.",
   },
   {
-    title: "Database-backed workflows",
-    detail: "Supabase and PostgreSQL integrations, record management, search, filters and pagination.",
+    number: "02",
+    name: "Supabase & PostgreSQL",
+    description: "Authentication, database-backed workflows, search, filters and paginated views.",
   },
   {
-    title: "APIs and application logic",
-    detail: "REST endpoints, validation, data models and Java / Spring Boot services.",
+    number: "03",
+    name: "APIs & integrations",
+    description: "REST endpoints, application logic, Java services and connecting the pieces.",
   },
 ];
 
 export default function Home() {
   return (
-    <div className="site-shell pt-8">
-      <section className="hero">
-        <div className="grid lg:grid-cols-[1.6fr_1fr]">
-          <div className="px-6 py-12 sm:px-10 sm:py-16">
-            <p className="eyebrow">Delaine · Full-stack developer · Eswatini</p>
-            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-              I build web apps, APIs, and the fiddly parts between them.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8">
-              Three years of professional web development experience, plus hands-on projects
-              using Next.js, React, TypeScript, Supabase and Java. I like turning messy
-              data and workflows into applications that people can actually use.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link className="button button-primary" href="/projects">
-                See my work
-              </Link>
-              <a className="button button-secondary" href="mailto:delaineabner3@gmail.com?subject=Development%20project">
-                Discuss a project
-              </a>
-            </div>
-            <div className="mt-9 flex flex-wrap gap-2">
-              {["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Java"].map((tech) => (
-                <TechBadge key={tech}>{tech}</TechBadge>
-              ))}
-            </div>
+    <div className="site-shell">
+      <section className="home-hero" aria-labelledby="intro-heading">
+        <div>
+          <p className="eyebrow">Delaine · Full-stack developer · Based in Eswatini</p>
+          <h1 id="intro-heading" className="hero-title mt-6">
+            From messy workflows to <em>working software.</em>
+          </h1>
+          <p className="hero-intro mt-7">
+            I'm Delaine. I've spent three years building and maintaining web
+            applications. I work with Next.js, React, TypeScript, Supabase,
+            PostgreSQL and Java, from database queries to the last UI detail.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <Link className="button button-primary" href="/projects">Explore my projects</Link>
+            <a className="text-link text-sm" href="mailto:delaineabner3@gmail.com?subject=Development%20project">
+              Email me ↗
+            </a>
           </div>
-
-          <aside className="hero-aside flex flex-col justify-between p-7 sm:p-10">
-            <div>
-              <p className="eyebrow eyebrow-light">What I can take on</p>
-              <h2 className="mt-5 text-3xl font-extrabold leading-tight">
-                One defined task. Working code. A clean handoff.
-              </h2>
-              <ul className="mt-8 space-y-5 text-base leading-7">
-                <li className="border-t border-[var(--skin)] pt-4">A frontend feature or dashboard</li>
-                <li className="border-t border-[var(--skin)] pt-4">A Supabase integration or data workflow</li>
-                <li className="border-t border-[var(--skin)] pt-4">A bug fix or API implementation</li>
-              </ul>
-            </div>
-            <p className="mt-10 text-sm leading-6">
-              Available for remote, paid, fixed-scope contract work.
-            </p>
-          </aside>
+          <p className="hero-meta mt-11">
+            Available for remote, paid contract projects · Source code linked below
+          </p>
         </div>
+        <aside className="feature-panel" aria-label="Featured project AvoLog">
+          <div className="flex items-center justify-between gap-4">
+            <span className="eyebrow">Project in focus</span>
+            <span className="tiny-label">01 / 03</span>
+          </div>
+          <div className="feature-rule mt-9" aria-hidden="true" />
+          <h2 className="feature-title mt-5">AvoLog</h2>
+          <p className="mt-5 text-base leading-8">
+            I grow avocado trees. So I built a way to track each plant,
+            its care history and its progress, without juggling notes and photos.
+          </p>
+          <ul className="feature-list mt-8 text-sm font-semibold leading-6">
+            <li>Next.js + Supabase</li>
+            <li>Care logs + image uploads</li>
+            <li>Filtering + pagination</li>
+          </ul>
+          <Link className="text-link mt-9 inline-block text-sm" href="/projects/avolog">
+            See the engineering decisions ↗
+          </Link>
+        </aside>
       </section>
 
-      <section className="mt-20">
+      <section className="section-rule pt-12 pb-16" aria-labelledby="services-title">
         <SectionHeading
-          eyebrow="Services"
-          title="Useful development work, without the ceremony."
-          description="These are the types of tasks I can scope, build, test and hand over."
+          eyebrow="What I work on"
+          title="Small problems deserve good engineering."
+          description="These are the kinds of tasks I can take from a defined scope to a working handoff."
         />
-        <div className="mt-7 grid gap-4 md:grid-cols-3">
-          {work.map((item, index) => (
-            <article className={index === 1 ? "surface-soft p-6" : "surface p-6"} key={item.title}>
-              <h3 className="text-xl font-bold">{item.title}</h3>
-              <p className="mt-3 leading-7">{item.detail}</p>
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          {services.map((service) => (
+            <article className="service-item" key={service.number}>
+              <p className="eyebrow">{service.number}</p>
+              <h3 className="mt-3 text-2xl font-bold">{service.name}</h3>
+              <p className="mt-3 leading-7">{service.description}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mt-20">
-        <SectionHeading
-          eyebrow="Selected projects"
-          title="Code you can inspect."
-          description="Personal applications and an API prototype. Each case study explains what works, how I built it and what I would improve."
-        />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
+      <section className="section-rule pt-12 pb-16" aria-labelledby="selected-work-title">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading
+            eyebrow="Selected work"
+            title="Projects with code behind them."
+            description="Three independent builds. I explain what I implemented, what I traded off and what I'd improve."
+          />
+          <Link className="text-link text-sm" href="/projects">All project details ↗</Link>
+        </div>
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
 
-      <section className="mt-20 grid gap-5 lg:grid-cols-[1fr_1.2fr]">
-        <div className="surface-soft p-7 sm:p-9">
+      <section className="section-rule grid gap-8 py-12 md:grid-cols-2">
+        <div>
           <p className="eyebrow">Professional experience</p>
-          <h2 className="mt-4 text-3xl font-black">Three years in a development team.</h2>
-          <p className="mt-5 leading-8">
-            I worked as a junior full-stack developer at AcisTek LLC from 2023 to 2026.
-            My experience includes application development, debugging, backend migration,
-            code reviews and AWS CI/CD support.
+          <h2 className="mt-4 text-3xl font-bold leading-tight">Three years in a development team.</h2>
+          <p className="mt-4 max-w-lg leading-8">
+            At AcisTek LLC (2023–2026), I worked on web development, backend
+            migration, debugging, code reviews and AWS CI/CD support.
           </p>
         </div>
-        <div className="surface p-7 sm:p-9">
-          <p className="eyebrow">Working together</p>
-          <h2 className="mt-4 text-3xl font-black">Start with a small, real problem.</h2>
-          <p className="mt-5 leading-8">
-            If you have a feature that needs finishing, a database workflow that needs
-            attention or a bug that keeps getting postponed, email me the scope.
-            I can propose a bounded, paid implementation.
+        <div className="work-cta p-8">
+          <p className="eyebrow">Let's work</p>
+          <h2 className="mt-4 text-3xl font-bold leading-tight">
+            Got a feature to finish or a bug to track down?
+          </h2>
+          <p className="mt-4 leading-7">
+            Send me the problem and the stack. I can propose a small, paid,
+            fixed-scope project.
           </p>
-          <a className="button button-primary mt-6" href="mailto:delaineabner3@gmail.com?subject=Small%20development%20project">
-            Tell me what needs fixing
+          <a className="button button-primary mt-7" href="mailto:delaineabner3@gmail.com?subject=Small%20development%20project">
+            Discuss a project
           </a>
         </div>
       </section>
